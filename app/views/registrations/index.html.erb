@@ -1,0 +1,40 @@
+<h1>Registrations for <%= link_to @event.name, @event %></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+
+<!-- START:start -->
+<% for registration in @registrations -%>
+  <!-- render registration attributes -->
+<!-- END:start -->
+
+  <tr>
+    <td><%=h registration.name %></td>
+    <td><%=h registration.email %></td>
+    
+    <td>
+  <!-- START:start -->
+  <%= link_to 'Show', 
+        event_registration_path(@event, registration) %> |
+          
+  <%= link_to 'Edit', 
+        edit_event_registration_path(@event, registration) %> |
+  
+  <%= link_to 'Destroy', 
+        event_registration_path(@event, registration), 
+        :confirm => 'Are you sure?', 
+        :method => :delete %>          
+  <!-- END:start -->
+    </td>
+  </tr>
+<!-- START:start -->
+<% end -%>
+<!-- END:start -->
+</table>
+
+<br />
+
+<%= link_to 'New registration', new_event_registration_path(@event) %>

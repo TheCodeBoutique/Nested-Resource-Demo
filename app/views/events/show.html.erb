@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @event.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @event.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @event.price %>
+</p>
+
+<p>
+  <b>Starts at:</b>
+  <%=h @event.starts_at %>
+</p>
+
+<!-- #START:link_registrations -->
+<p>
+  <%= link_to 'Registrations', 
+              event_registrations_path(@event) %>
+</p>
+<!-- #END:link_registrations -->
+
+<!-- #START:register -->
+<%= link_to 'Register', new_event_registration_path(@event) %>
+<!-- #END:register -->
+|
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

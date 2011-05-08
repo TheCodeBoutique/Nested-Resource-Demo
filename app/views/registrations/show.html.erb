@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @registration.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @registration.email %>
+</p>
+
+<%= link_to 'Edit', 
+            edit_event_registration_path(@event, @registration) %> |
+<%= link_to 'Back', event_registrations_path(@event) %>

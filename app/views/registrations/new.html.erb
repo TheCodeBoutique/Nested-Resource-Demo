@@ -1,0 +1,20 @@
+<h1>New registration</h1>
+
+
+<!-- #START:form_for -->
+<% form_for([@event, @registration]) do |f| -%>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <b>Email</b><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end -%>
+<!-- #END:form_for -->
+
+<%= link_to 'Back', event_registrations_path(@event) %>
